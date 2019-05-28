@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	.container
+		h1= name
+		p rendered the page
+			ul
+				li I am #{age} years old
+				li I live in #{city}
+				if relation
+					li I am Ian's #{relation}
+

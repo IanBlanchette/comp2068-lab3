@@ -6,29 +6,41 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/ian', (req, res, next) =>
+const persons =[
+	{
+		path: 'ian',
+		name: "Ian Blanchette",
+		age: 28, 
+		city: 'Little Britain', 
+		birthplace: 'Huntsville',
+		likes: 'pizza',
+		dislikes: 'slow drivers'
+	 },
+	 {
+		path: 'kia',
+		name: 'Kia',
+		age: 23,
+		city: 'Little Britain',
+		birthplace: 'Lindsay',
+		likes: 'chocolate',
+		dislikes: 'rude people',
+		relation: 'fiance'
+	}
+
+	 ];
+
+router.get('/:name', (req, res, next) =>
 {
-	res.render('ian', {});
+	const name = req.params.name;
+	console.log(name);
+	const person = persons.find(per => per.path === name);
+	if(!person)
+	{
+		return next(new Error("Person does not exsist"));	
+		
+	}
+	res.render('person', person);
 });
 
-router.get('/kia', (req, res, next) =>
-{
-	res.render('kia', {});
-});
-
-router.get('/mom', (req, res, next) =>
-{
-	res.render('mom', {});
-});
-
-router.get('/dad', (req, res, next) =>
-{
-	res.render('dad', {});
-});
-
-router.get('/nicole', (req, res, next) =>
-{
-	res.render('nicole', {});
-});
 
 module.exports = router;
