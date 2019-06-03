@@ -25,8 +25,37 @@ const persons =[
 		likes: 'chocolate',
 		dislikes: 'rude people',
 		relation: 'fiance'
+	},
+	{
+		path: 'viola',
+		name: 'Viola Blanchette',
+		age: 55,
+		city: 'Barrie',
+		birthplace: 'Kitchner',
+		likes: 'Being with her family',
+		dislikes: 'Winter',
+		relation: 'Mother'
+	},
+	{
+	path: 'denis',
+		name: 'Denis Blanchette',
+		age: 55,
+		city: 'Barrie',
+		birthplace: 'Kitchner',
+		likes: 'Fishing and Boating',
+		dislikes: 'When the Toronto Maple Leafs lose',
+		relation: 'Father'
+	},
+	{
+	path: 'nicole',
+		name: 'Nicole Babe',
+		age: 55,
+		city: 'Barrie',
+		birthplace: 'Huntsville',
+		likes: 'Teaching',
+		dislikes: 'Shovelling the driveway',
+		relation: 'Sister'
 	}
-
 	 ];
 
 router.get('/:name', (req, res, next) =>
